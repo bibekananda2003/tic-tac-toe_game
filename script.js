@@ -24,44 +24,47 @@ function changeData(value){
         change='O'
     }
 }
+function checkIf(){
+    if(cell_1.innerHTML==cell_2.innerHTML && cell_1.innerHTML==cell_3.innerHTML && cell_1.innerHTML !=''){
+        p.innerHTML=cell_1.innerHTML+' Wins'
+        disableButtons()
+    }
+    if(cell_1.innerHTML==cell_4.innerHTML && cell_1.innerHTML==cell_7.innerHTML && cell_1.innerHTML !=''){
+        p.innerHTML=cell_1.innerHTML+' Wins'
+        disableButtons()
+    }
+    if(cell_1.innerHTML==cell_5.innerHTML && cell_1.innerHTML==cell_9.innerHTML && cell_1.innerHTML !=''){
+        p.innerHTML=cell_1.innerHTML+' Wins'
+        disableButtons()
+    }
+    if(cell_5.innerHTML==cell_2.innerHTML && cell_5.innerHTML==cell_8.innerHTML && cell_5.innerHTML !=''){
+        p.innerHTML=cell_5.innerHTML+' Wins'
+        disableButtons()
+    }
+    if(cell_6.innerHTML==cell_9.innerHTML && cell_6.innerHTML==cell_3.innerHTML && cell_6.innerHTML !=''){
+        p.innerHTML=cell_6.innerHTML+' Wins'
+        disableButtons()
+    }
+    if(cell_4.innerHTML==cell_5.innerHTML && cell_4.innerHTML==cell_6.innerHTML && cell_4.innerHTML !=''){
+        p.innerHTML=cell_4.innerHTML+' Wins'
+        disableButtons()
+    }
+    if(cell_3.innerHTML==cell_5.innerHTML && cell_3.innerHTML==cell_7.innerHTML && cell_3.innerHTML !=''){
+        p.innerHTML=cell_3.innerHTML+' Wins'
+        disableButtons()
+    }
+    if(cell_7.innerHTML==cell_8.innerHTML && cell_7.innerHTML==cell_9.innerHTML && cell_7.innerHTML !=''){
+        p.innerHTML=cell_7.innerHTML+' Wins'
+        disableButtons()
+    }
+}
 
 function checkWinner(){
-    if (counter<9){
-        if(cell_1.innerHTML==cell_2.innerHTML && cell_1.innerHTML==cell_3.innerHTML && cell_1.innerHTML !=''){
-            p.innerHTML=cell_1.innerHTML+' Wins'
-            disableButtons()
+        if(counter<=9){
+        checkIf()
+        if(counter ==9 && p.innerHTML==''){
+            p.innerHTML='It is a TIE'
         }
-        if(cell_1.innerHTML==cell_4.innerHTML && cell_1.innerHTML==cell_7.innerHTML && cell_1.innerHTML !=''){
-            p.innerHTML=cell_1.innerHTML+' Wins'
-            disableButtons()
-        }
-        if(cell_1.innerHTML==cell_5.innerHTML && cell_1.innerHTML==cell_9.innerHTML && cell_1.innerHTML !=''){
-            p.innerHTML=cell_1.innerHTML+' Wins'
-            disableButtons()
-        }
-        if(cell_5.innerHTML==cell_2.innerHTML && cell_5.innerHTML==cell_8.innerHTML && cell_5.innerHTML !=''){
-            p.innerHTML=cell_5.innerHTML+' Wins'
-            disableButtons()
-        }
-        if(cell_6.innerHTML==cell_9.innerHTML && cell_6.innerHTML==cell_3.innerHTML && cell_6.innerHTML !=''){
-            p.innerHTML=cell_6.innerHTML+' Wins'
-            disableButtons()
-        }
-        if(cell_4.innerHTML==cell_5.innerHTML && cell_4.innerHTML==cell_6.innerHTML && cell_4.innerHTML !=''){
-            p.innerHTML=cell_4.innerHTML+' Wins'
-            disableButtons()
-        }
-        if(cell_3.innerHTML==cell_5.innerHTML && cell_3.innerHTML==cell_7.innerHTML && cell_3.innerHTML !=''){
-            p.innerHTML=cell_3.innerHTML+' Wins'
-            disableButtons()
-        }
-        if(cell_7.innerHTML==cell_8.innerHTML && cell_7.innerHTML==cell_9.innerHTML && cell_7.innerHTML !=''){
-            p.innerHTML=cell_7.innerHTML+' Wins'
-            disableButtons()
-        }
-    }
-    else{
-        p.innerHTML='It is a tie'
     }
 }
 function disableButtons(){
@@ -76,18 +79,21 @@ function disableButtons(){
 function cell1(){
     if(cell_1.innerHTML==''){
         changeData(cell_1)
+        counter+=1
     }
     checkWinner()
 }
 function cell2(){
     if(cell_2.innerHTML==''){
         changeData(cell_2)
+        counter+=1
     }
     checkWinner()
 }
 function cell3(){
     if(cell_3.innerHTML==''){
         changeData(cell_3)
+        counter+=1
     }
     checkWinner()
 }
